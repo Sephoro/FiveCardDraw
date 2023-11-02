@@ -8,6 +8,4 @@
   * Java 17 or higher
   * Maven
   * Springboot version 3.1.5
- 
-  * 
 
