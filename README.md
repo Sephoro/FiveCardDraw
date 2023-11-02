@@ -9,4 +9,7 @@
   * Maven
   * Springboot version 3.1.5
   * To run the application, execute the ``run.sh`` script
+    * ``run.sh`` runs ``mvn clean install`` silently for the first time, without logs
+    * ``run.sh -show-logs`` runs ``mvn clean install`` showing all logs
+    * **NB** the ``mvn clean install`` command is only runs on the first execution of the application, from there on the ``run.sh`` script only executes the jar file. To make it ``clean install``  again delete the target folder
 
