@@ -2,8 +2,8 @@ package com.epiuse.poker;
 
 import com.epiuse.poker.model.Card;
 import com.epiuse.poker.model.CardSuit;
-import com.epiuse.poker.model.CollectionsShuffler;
-import com.epiuse.poker.model.interfaces.Shuffler;
+import com.epiuse.poker.service.CollectionsShuffler;
+import com.epiuse.poker.service.interfaces.Shuffler;
 import com.epiuse.poker.utils.LimitedList;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

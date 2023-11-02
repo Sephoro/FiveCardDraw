@@ -1,4 +1,4 @@
-package com.epiuse.poker.model.interfaces;
+package com.epiuse.poker.service.interfaces;
 
 import com.epiuse.poker.model.Card;
 import com.epiuse.poker.utils.LimitedList;
@@ -17,6 +17,9 @@ public abstract class PokerVariant {
     public abstract String cardsStrength();
 
     public String cardsString(){
+
+        // Line the cards for an output
+
         StringBuilder cards = new StringBuilder();
 
         for(Card card: getCards().getList()){

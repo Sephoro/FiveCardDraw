@@ -16,7 +16,7 @@ public class CardsService {
 
     public void create(){
 
-        if(cards.getList().isEmpty()) {
+        if(cards == null || cards.getList().isEmpty()) {
 
             cards = new LimitedList<>(52);
 

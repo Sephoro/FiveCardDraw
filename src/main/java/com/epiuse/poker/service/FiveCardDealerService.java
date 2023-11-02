@@ -1,6 +1,7 @@
 package com.epiuse.poker.service;
 
 import com.epiuse.poker.model.Card;
+import com.epiuse.poker.service.interfaces.DealerService;
 import com.epiuse.poker.service.interfaces.Shuffler;
 import com.epiuse.poker.utils.LimitedList;
 import lombok.AccessLevel;
@@ -10,9 +11,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
-@Service
+@Service("FiveCardDealerService")
 @Getter
-public class DealerService {
+public class FiveCardDealerService implements DealerService {
 
     private final LimitedList<Card> cardDeck;
 
@@ -20,7 +21,7 @@ public class DealerService {
     private final Shuffler shuffler;
 
     @Autowired
-    public DealerService(CardsService cardsService, Shuffler shuffler){
+    public FiveCardDealerService(CardsService cardsService, Shuffler shuffler){
 
         this.shuffler = shuffler;
 
@@ -34,6 +35,7 @@ public class DealerService {
         shuffler.shuffle(cardDeck);
     }
 
+    @Override
     public LimitedList<Card> deal(Integer numberOfCardsPerPlayer){
 
         // When dealing the cards, take from the top
@@ -47,6 +49,11 @@ public class DealerService {
         cardDeck.getList().removeAll(sublist.getList());
 
         return sublist;
+    }
+
+    @Override
+    public LimitedList<Card> getDeck() {
+        return cardDeck;
     }
 
 }

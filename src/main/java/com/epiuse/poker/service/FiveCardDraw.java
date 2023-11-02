@@ -1,7 +1,9 @@
-package com.epiuse.poker.model;
+package com.epiuse.poker.service;
 
-import com.epiuse.poker.model.interfaces.PokerVariant;
+import com.epiuse.poker.service.interfaces.PokerVariant;
+import org.springframework.stereotype.Service;
 
+@Service("FiveCardDraw")
 public class FiveCardDraw extends PokerVariant {
 
     public FiveCardDraw(){
@@ -11,6 +13,5 @@ public class FiveCardDraw extends PokerVariant {
     public String cardsStrength() {
         return null;
     }
-
 
 }

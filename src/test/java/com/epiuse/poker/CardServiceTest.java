@@ -5,6 +5,7 @@ import com.epiuse.poker.service.CardsService;
 import com.epiuse.poker.utils.LimitedList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,12 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class CardServiceTest {
 
+    @Autowired
     private CardsService cardsService;
 
     @BeforeEach
     public void setUp() {
         // Initialize the CardsService and the LimitedList before each test
-        cardsService = new CardsService();
         cardsService.setCards(new LimitedList<>(52));
     }
 

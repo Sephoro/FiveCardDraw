@@ -2,10 +2,11 @@ package com.epiuse.poker;
 
 import com.epiuse.poker.model.Card;
 import com.epiuse.poker.model.CardSuit;
-import com.epiuse.poker.model.FiveCardDraw;
-import com.epiuse.poker.model.interfaces.PokerVariant;
+import com.epiuse.poker.service.interfaces.PokerVariant;
 import com.epiuse.poker.utils.LimitedList;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,11 +14,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class FiveCardDrawTest {
 
+    @Autowired
+    @Qualifier("FiveCardDraw")
+    private PokerVariant fiveCard;
     @Test
     public void testSettingCards(){
-
-        PokerVariant fiveCard = new FiveCardDraw();
-
 
         LimitedList<Card> fourCards = new LimitedList<>(4);
 
@@ -42,8 +43,6 @@ public class FiveCardDrawTest {
 
     @Test
     public void testToString(){
-
-        PokerVariant fiveCard = new FiveCardDraw();
 
         LimitedList<Card> fiveCards = new LimitedList<>(5);
 

@@ -1,6 +1,7 @@
-package com.epiuse.poker.model;
+package com.epiuse.poker.service;
 
-import com.epiuse.poker.model.interfaces.Shuffler;
+import com.epiuse.poker.model.Card;
+import com.epiuse.poker.service.interfaces.Shuffler;
 import com.epiuse.poker.utils.LimitedList;
 import org.springframework.stereotype.Service;
 
