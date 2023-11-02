@@ -43,15 +43,9 @@ public class FiveCardDealerTest {
     @Test
     public void testCardsReducesAfterDeal(){
 
-        // The assumption here is that the 1st three cards ordered in the deck are clubs in their order
-
-        LimitedList<Card> threeCards = new LimitedList<>(3);
-
-        threeCards.add(new Card(new CardSuit("♣", "club"), "A"));
-        threeCards.add(new Card(new CardSuit("♣", "club"), "2"));
-        threeCards.add(new Card(new CardSuit("♣", "club"), "3"));
-
         // shuffle the dealer cards
+
+        int originalCount = fiveCardDealerService.getDeck().getList().size();
 
         fiveCardDealerService.shuffle();
 
@@ -59,7 +53,7 @@ public class FiveCardDealerTest {
 
         // number of cards left should be 46
 
-        assertEquals(46, fiveCardDealerService.getDeck().getList().size());
+        assertEquals(originalCount - 3, fiveCardDealerService.getDeck().getList().size());
     }
 
 }
