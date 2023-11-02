@@ -33,7 +33,7 @@ public class FiveCardPokerPlayService implements PokerPlayService {
 
         System.out.println("Your hand: " + fiveCardPlayerService.getHand());
 
-        System.out.println("Your have: " + fiveCardPlayerService.getHand());
+        System.out.println("Your have: " + fiveCardPlayerService.getHandStrength());
     }
 
 }
